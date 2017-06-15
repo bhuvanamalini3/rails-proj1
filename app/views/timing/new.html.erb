@@ -1,0 +1,76 @@
+<div class="w3-orange" ng-controller="postcontroller">
+	<button class="w3-button w3-xxlarge w3-text-white" onclick="w3_open()">&#9776;</button>
+	<div class="w3-display-topright w3-text-white user_font user_font_weight w3-jumbo">Meet Point!</div>
+	<!-- Sidebar -->
+	<div class="w3-sidebar w3-bar-block w3-animate-left user_siderbar" id="mySidebar">
+	  <button class="w3-bar-item w3-button w3-large" onclick="w3_close()"><h2 class="sidebar_text">Close &times;</h2></button>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h1 class="sidebar_text">Team Members</h1></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">bhuvanamalini</h2></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">ananthi</h2></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">ajay</h2></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">pranav</h2></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">suhi</h2></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">raghul</h2></a>
+	  <a href="#" class="w3-bar-item w3-button w3-hover-orange w3-hover-text-white"><h2 class="sidebar_text">saravana</h2></a>
+	</div>
+	<!-- Page Content -->
+	<div class="w3-overlay w3-animate-opacity close_button" onclick="w3_close()" id="myOverlay"></div>
+	<div class="row">
+			<div class="col-md-offset-3 col-md-6">
+				<div class="w3-border">
+					<div class="w3-container">
+						<div class="w3-display-container w3-panel w3-white w3-text-orange w3-padding-16 user_msg">
+							<ul class="w3-ul w3-card-4 w3-margin">
+							  <li class="w3-padding-16 w3-display-container" ng-repeat="x in msg track by $index">
+							  	<button class="w3-display-topright buttons" ng-click="deletemsg($index)"><i class="fa fa-trash" aria-hidden="true"></i>
+								</button>
+							  	<button name="edit" class="w3-display-bottomright buttons" ng-click="x.showedit = true; editinputfield = x.arraymsg"><i class="fa fa-pencil" aria-hidden="true"></i>
+								</button>
+							    <img src="/assets/img3.jpg" class="w3-left w3-circle w3-margin-right" style="width:65px;height: 65px">
+							    <span class="w3-large user_font_weight">bhuvanamalini</span><br>
+							    <span ng-show="editorspan" ng-value="editedvalue" ng-model="spanvalueget">{{x.arraymsg}}
+							    </span>
+							    <div ng-show="x.showedit">
+								    <input ng-model="editinputfield" ng-value="x.arraymsg"/>
+								    <button ng-click="x.arraymsg = editinputfield; x.showedit = false" class="w3-khaki">ok</button>
+								    <button ng-click="x.showedit = false" class="w3-khaki">cancel</button>
+							   	</div>
+							  </li>
+							</ul>
+							<!-- <ul class="w3-ul w3-card-4 w3-margin">
+							  <li class="w3-padding-16 w3-display-container">
+							  	<button class="w3-display-topright">c</button>
+							  	<button class="w3-display-bottomright">e</button>
+							    <img src="/assets/img2.jpg" class="w3-left w3-circle w3-margin-right" style="width:65px;height: 65px">
+							    <span class="w3-large user_font_weight">Ananthi</span><br>
+							    <span>hi!..this is my nice idea</span>
+							  </li>
+							</ul>
+							<ul class="w3-ul w3-card-4 w3-margin">
+							  <li class="w3-padding-16 w3-display-container">
+							  	<button class="w3-display-topright">c</button>
+							  	<button class="w3-display-bottomright">e</button>
+							    <img src="/assets/img4.jpg" class="w3-left w3-circle w3-margin-right" style="width:65px;height: 65px">
+							    <span class="w3-large user_font_weight">Ajay</span><br>
+							    <span>hi!..this is my nice idea</span>
+							  </li>
+							</ul>
+							<ul class="w3-ul w3-card-4 w3-margin">
+							  <li class="w3-padding-16 w3-display-container">
+							  	<button class="w3-display-topright">c</button>
+							  	<button class="w3-display-bottomright">e</button>
+							    <img src="/assets/img1.jpg" class="w3-left w3-circle w3-margin-right" style="width:65px;height: 65px">
+							    <span class="w3-large user_font_weight">Pranav</span><br>
+							    <span>hi!..this is my nice idea</span>
+							  </li>
+							</ul> -->
+							<form ng-submit="postidea(ideatext)">
+								<input class="w3-input" ng-model="ideatext" type="text" placeholder="Type here.........!!!"/>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<!-- chat box -->
+</div>
